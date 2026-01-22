@@ -57,7 +57,7 @@ router.post('/edit', upload.single('image'), async (req, res) => {
         quantity: Number(quantity),
         url_image: req.file ? req.file.location : old_image_url // Nếu không upload ảnh mới, giữ ảnh cũ
     };
-    await saveProduct(updatedProduct); // PutCommand sẽ ghi đè lên ID cũ
+    await saveProduct(updatedProduct); 
     res.redirect('/');
 });
 
